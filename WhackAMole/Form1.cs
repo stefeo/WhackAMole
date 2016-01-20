@@ -20,8 +20,10 @@ namespace WhackAMole
         int plr1Score;
         int plr2Score;
         int moleAmount;
-        int plr1Miss;
-        int plr2Miss;
+        int plr1Miss = 0;
+        int plr2Miss = 0;
+        int plr1Timer;
+        int plr2Timer;
 
         bool mole0 = false;
         bool mole1 = false;
@@ -44,61 +46,129 @@ namespace WhackAMole
              switch (e.KeyCode) 
              { 
                  case Keys.M:
-                    if (mole1 == true)
+                    if (mole1 == true && plr1Enabled == true)
                     {
                         mole1 = false;
                         plr1Score++;
                     }
                     else
                     {
+                        if (plr1Enabled == false)
+                        {
+                            plr1Miss--;
+                        }
                         plr1Miss++;
+                        //play the silly sound
                     }
                      break; 
                  case Keys.N:
-                    if (mole0 == true)
+                    if (mole0 == true && plr1Enabled == true)
                     {
                         mole0 = false;
                         plr1Score++;
                     }
                     else
                     {
+                        if (plr1Enabled == false)
+                        {
+                            plr1Miss--;
+                        }
                         plr1Miss++;
                     }
                     break; 
                  case Keys.B:
-                    if (mole3 == true)
+                    if (mole3 == true && plr1Enabled == true)
                     {
                         mole3 = false;
                         plr1Score++;
                     }
                     else
                     {
+                        if (plr1Enabled == false)
+                        {
+                            plr1Miss--;
+                        }
                         plr1Miss++;
                     }
                     break; 
                  case Keys.Space:
-                    if (mole2 == true)
+                    if (mole2 == true && plr1Enabled == true)
                     {
                         mole2 = false;
                         plr1Score++;
                     }
                     else
                     {
+                        if (plr1Enabled == false)
+                        {
+                            plr1Miss--;
+                        }
                         plr1Miss++;
                     }
                     break;
                 case Keys.V:
+                    if (mole0 == true && plr2Enabled == true)
+                    {
+                        mole0 = false;
+                        plr2Score++;
+                    }
+                    else
+                    {
+                        if (plr2Enabled == false)
+                        {
+                            plr2Miss--;
+                        }
+                        plr2Miss++;
+                    }
                     break;
                 case Keys.C:
+                    if (mole1 == true && plr2Enabled == true)
+                    {
+                        mole1 = false;
+                        plr2Score++;
+                    }
+                    else
+                    {
+                        if (plr2Enabled == false)
+                        {
+                            plr2Miss--;
+                        }
+                        plr2Miss++;
+                    }
                     break;
                 case Keys.X:
+                    if (mole2 == true && plr2Enabled == true)
+                    {
+                        mole2 = false;
+                        plr2Score++;
+                    }
+                    else
+                    {
+                        if (plr2Enabled == false)
+                        {
+                            plr2Miss--;
+                        }
+                        plr2Miss++;
+                    }
                     break;
                 case Keys.Z:
+                    if (mole3 == true && plr2Enabled == true)
+                    {
+                        mole3 = false;
+                        plr2Score++;
+                    }
+                    else
+                    {
+                        if (plr2Enabled == false)
+                        {
+                            plr2Miss--;
+                        }
+                        plr2Miss++;
+                    }
                     break;
                  default: 
                      break; 
              }  
- 
          }
 
 
@@ -140,11 +210,6 @@ namespace WhackAMole
                     break;
             }
         }
-        public void SpawnMole2(int moleSpot, int moleVariation)
-        {
-            SpawnMole(moleSpot);
-
-        }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -171,12 +236,41 @@ namespace WhackAMole
                 moleSpot = rndNum.Next(0, 5);
                 SpawnMole(moleSpot);
             }
-            if (mole == 2)
-            {
-                moleAmount += 2;
-                moleSpot = rndNum.Next(0, 4);
-                moleVariation = rndNum.Next(0, 3);
 
+            label5.Text = "Player1 Score: " + plr1Score;
+            label6.Text = "Player2 Score: " + plr2Score;
+            label7.Text = "Player1 Misses: " + plr1Miss;
+            label8.Text = "Player2 Misses: " + plr2Miss;
+
+            plr1Timer++;
+            plr2Timer++;
+
+            if (plr1Timer >= 180)
+            {
+                plr1Enabled = true;
+            }
+            else
+            {
+                plr1Enabled = false;
+            }
+            if (plr2Timer >= 180)
+            {
+                plr2Enabled = true;
+            }
+            else
+            {
+                plr2Enabled = false;
+            }
+
+            if (plr1Miss >= 3)
+            {
+                plr1Miss = 0;
+                plr1Timer = 0;
+            }
+            if (plr2Miss >= 3)
+            {
+                plr2Miss = 0;
+                plr2Timer = 0;
             }
         }
     }

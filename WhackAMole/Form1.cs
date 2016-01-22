@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace WhackAMole
 {
@@ -14,16 +15,14 @@ namespace WhackAMole
     {
         //Variables
         int mole;
-        int moleChance = 60;
+        int moleChance = 30;
         int moleSpot;
-        int moleVariation;
         int plr1Score;
         int plr2Score;
-        int moleAmount;
         int plr1Miss = 0;
         int plr2Miss = 0;
-        int plr1Timer;
-        int plr2Timer;
+        int plr1Timer = 180;
+        int plr2Timer = 180;
 
         bool mole0 = false;
         bool mole1 = false;
@@ -38,6 +37,8 @@ namespace WhackAMole
         {
             InitializeComponent();
             gameTimer.Start();
+
+
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -232,7 +233,6 @@ namespace WhackAMole
             mole = rndNum.Next(0, moleChance);
             if (mole == 1)
             {
-                moleAmount++;
                 moleSpot = rndNum.Next(0, 5);
                 SpawnMole(moleSpot);
             }
@@ -272,6 +272,55 @@ namespace WhackAMole
                 plr2Miss = 0;
                 plr2Timer = 0;
             }
+
+            //ending game
+            if (plr1Score + plr2Score >= 35)
+            {
+                gameTimer.Stop();
+                label5.Text = "Game Over";
+            }
+
+            //player Score
+            foreach (var character in plr1Score.ToString())
+            {
+                switch (character)
+                {
+                    case '0':
+                        pictureBox1.BackgroundImage = Properties.Resources.Score0;
+                        break;
+                    case '1':
+                        pictureBox1.BackgroundImage = Properties.Resources.Score1;
+                        break;
+                    case '2':
+                        pictureBox1.BackgroundImage = Properties.Resources.Score2;
+                        break;
+                    case '3':
+                        pictureBox1.BackgroundImage = Properties.Resources.Score3;
+                        break;
+                    case '4':
+                        pictureBox1.BackgroundImage = Properties.Resources.Score4;
+                        break;
+                    case '5':
+                        pictureBox1.BackgroundImage = Properties.Resources.Score5;
+                        break;
+                    case '6':
+                        pictureBox1.BackgroundImage = Properties.Resources.Score6;
+                        break;
+                    case '7':
+                        pictureBox1.BackgroundImage = Properties.Resources.Score7;
+                        break;
+                    case '8':
+                        pictureBox1.BackgroundImage = Properties.Resources.Score8;
+                        break;
+                    case '9':
+                        pictureBox1.BackgroundImage = Properties.Resources.Score9;
+                        break;
+                    default:
+
+                        break;
+                }
+            }
+
         }
     }
 }

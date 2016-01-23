@@ -269,7 +269,7 @@
             this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox6.Location = new System.Drawing.Point(12, 402);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(400, 60);
+            this.pictureBox6.Size = new System.Drawing.Size(350, 60);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox6.TabIndex = 22;
             this.pictureBox6.TabStop = false;
@@ -279,9 +279,9 @@
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox7.Location = new System.Drawing.Point(588, 402);
+            this.pictureBox7.Location = new System.Drawing.Point(641, 402);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(400, 60);
+            this.pictureBox7.Size = new System.Drawing.Size(350, 60);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox7.TabIndex = 23;
             this.pictureBox7.TabStop = false;

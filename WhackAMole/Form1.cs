@@ -17,6 +17,7 @@ namespace WhackAMole
         //variables
         #region
         //Variables
+        int counter;
         int mole;
         int moleChance = 15;
         int moleSpot;
@@ -28,6 +29,10 @@ namespace WhackAMole
         int plr2Timer = 120;
         int countdownTimer = 0;
         int endGameCounter;
+        int moleAnimationCounter;
+        int moleAnimationCounter1;
+        int moleAnimationCounter2;
+        int moleAnimationCounter3;
 
         bool mole0 = false;
         bool mole1 = false;
@@ -37,7 +42,7 @@ namespace WhackAMole
         bool plr2Enabled = true;
 
         Size size1 = new Size(900, 1500);
-        Point location1 = new Point(57, -510 );
+        Point location1 = new Point(57, -510);
         Size size2 = new Size(810, 1350);
         Point location2 = new Point(102, -435);
         Size size3 = new Size(720, 1200);
@@ -57,10 +62,14 @@ namespace WhackAMole
         Size size10 = new Size(90, 150);
         Point location10 = new Point(462, 165);
 
-        Point endGameLocation = new Point(12, 404);
+        Point endGameLocation0 = new Point(12, 404);
         Point endGameLocation1 = new Point(12, 402);
-        Point endGameLocation2 = new Point(588, 404);
-        Point endGameLocation3 = new Point(588, 402);
+        Point endGameLocation2 = new Point(641, 404);
+        Point endGameLocation3 = new Point(641, 402);
+
+        List<Point> endGamePoints = new List<Point>();
+        List<Size> sizes = new List<Size>();
+        List<Point> locations = new List<Point>();
 
         Random rndNum = new Random();
         #endregion
@@ -69,6 +78,33 @@ namespace WhackAMole
         {
             InitializeComponent();
             gameTimer.Start();
+            //making point list
+            endGamePoints.Add(endGameLocation0);
+            endGamePoints.Add(endGameLocation1);
+            endGamePoints.Add(endGameLocation2);
+            endGamePoints.Add(endGameLocation3);
+            //making size list
+            sizes.Add(size1);
+            sizes.Add(size2);
+            sizes.Add(size3);
+            sizes.Add(size4);
+            sizes.Add(size5);
+            sizes.Add(size6);
+            sizes.Add(size7);
+            sizes.Add(size8);
+            sizes.Add(size9);
+            sizes.Add(size10);
+            //making location list
+            locations.Add(location1);
+            locations.Add(location2);
+            locations.Add(location3);
+            locations.Add(location4);
+            locations.Add(location5);
+            locations.Add(location6);
+            locations.Add(location7);
+            locations.Add(location8);
+            locations.Add(location9);
+            locations.Add(location10);
         }
 
         private void CallCountdown()
@@ -88,51 +124,51 @@ namespace WhackAMole
 
         private void GameCountdown()
         {
-            pictureBox5.Size = size1;
-            pictureBox5.Location = location1;
+            pictureBox5.Size = sizes[0];
+            pictureBox5.Location = locations[0];
             Refresh();
             Thread.Sleep(10);
-            pictureBox5.Size = size2;
-            pictureBox5.Location = location2;
+            pictureBox5.Size = sizes[1];
+            pictureBox5.Location = locations[1];
             Refresh();
             Thread.Sleep(10);
-            pictureBox5.Size = size3;
-            pictureBox5.Location = location3;
+            pictureBox5.Size = sizes[2];
+            pictureBox5.Location = locations[2];
             Refresh();
             Thread.Sleep(10);
-            pictureBox5.Size = size4;
-            pictureBox5.Location = location4;
+            pictureBox5.Size = sizes[3];
+            pictureBox5.Location = locations[3];
             Refresh();
             Thread.Sleep(10);
-            pictureBox5.Size = size5;
-            pictureBox5.Location = location5;
+            pictureBox5.Size = sizes[4];
+            pictureBox5.Location = locations[4];
             Refresh();
             Thread.Sleep(10);
-            pictureBox5.Size = size6;
-            pictureBox5.Location = location6;
+            pictureBox5.Size = sizes[5];
+            pictureBox5.Location = locations[5];
             Refresh();
             Thread.Sleep(10);
-            pictureBox5.Size = size7;
-            pictureBox5.Location = location7;
+            pictureBox5.Size = sizes[6];
+            pictureBox5.Location = locations[6];
             Refresh();
             Thread.Sleep(10);
-            pictureBox5.Size = size8;
-            pictureBox5.Location = location8;
+            pictureBox5.Size = sizes[7];
+            pictureBox5.Location = locations[7];
             Refresh();
             Thread.Sleep(10);
-            pictureBox5.Size = size9;
-            pictureBox5.Location = location9;
+            pictureBox5.Size = sizes[8];
+            pictureBox5.Location = locations[8];
             Refresh();
             Thread.Sleep(10);
-            pictureBox5.Size = size10;
-            pictureBox5.Location = location10;
+            pictureBox5.Size = sizes[9];
+            pictureBox5.Location = locations[9];
             Refresh();
-            Thread.Sleep(10);
+            Thread.Sleep(910);
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (endGameTimer.Enabled == true)
+            if (endGameTimer.Enabled == true && endGameCounter >= 4)
             {
                 endGameTimer.Enabled = false;
                 pictureBox6.Visible = false;
@@ -291,6 +327,8 @@ namespace WhackAMole
                 case 0:
                     if (mole0 == false)
                     {
+                        moleAnimationCounter = 0;
+                        //MoleUp();
                         label1.BackColor = Color.Red;
                         mole0 = true;
                         //spawn mole in place 0
@@ -299,6 +337,8 @@ namespace WhackAMole
                 case 1:
                     if (mole1 == false)
                     {
+                        moleAnimationCounter1 = 0;
+                        //MoleUp();
                         label2.BackColor = Color.Red;
                         mole1 = true;
                         //spawn mole in place 1
@@ -307,6 +347,8 @@ namespace WhackAMole
                 case 2:
                     if (mole2 == false)
                     {
+                        moleAnimationCounter2 = 0;
+                        //MoleUp();
                         label3.BackColor = Color.Red;
                         mole2 = true;
                         //spawn mole in place 2
@@ -315,6 +357,8 @@ namespace WhackAMole
                 case 3:
                     if (mole3 == false)
                     {
+                        moleAnimationCounter3 = 0;
+                        //MoleUp();
                         label4.BackColor = Color.Red;
                         mole3 = true;
                         //spawn mole in place 3
@@ -325,6 +369,19 @@ namespace WhackAMole
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            moleAnimationCounter++;
+            moleAnimationCounter1++;
+            moleAnimationCounter2++;
+            moleAnimationCounter3++;
+            counter++;
+            if (plr1Enabled == false)
+            {
+                StunPlayer(1);
+            }
+            if (plr2Enabled == false)
+            {
+                StunPlayer(2);
+            }
             if (plr1Miss == 0 && plr1Timer > 120)
             {
                 plr1Misses1.Visible = false;
@@ -586,20 +643,109 @@ namespace WhackAMole
         private void endGameTimer_Tick(object sender, EventArgs e)
         {
             endGameCounter++;
-            if (endGameCounter % 2 == 1)
+            if (endGameCounter % 2 == 0)
             {
                 gameOverBox.Visible = true;
                 continueBox.Visible = true;
-                pictureBox6.Location = endGameLocation;
-                pictureBox7.Location = endGameLocation2;
+                pictureBox6.Location = endGamePoints[0];
+                pictureBox7.Location = endGamePoints[2];
             }
             else
             {
                 gameOverBox.Visible = false;
                 continueBox.Visible = false;
-                pictureBox6.Location = endGameLocation1;
-                pictureBox7.Location = endGameLocation3;
+                pictureBox6.Location = endGamePoints[1];
+                pictureBox7.Location = endGamePoints[3];
             }
         }
+
+        private void TitleScreen()
+        {
+            //basically everything not visible
+            //and switch background
+            //and use the endgametimer to have menu animations
+            //also needs instructions
+        }
+
+        private void StunPlayer(int player)
+        { 
+            if (player == 1)
+            {
+                if (counter % 30 == 0)
+                {
+                    plr1Misses1.Visible = false;
+                    plr1Misses2.Visible = false;
+                    plr1Misses3.Visible = false;
+                }
+                else if (counter % 30 == 15)
+                {
+                    plr1Misses1.Visible = true;
+                    plr1Misses2.Visible = true;
+                    plr1Misses3.Visible = true;
+                }
+            }
+            else
+            {
+                if (counter % 30 == 0)
+                {
+                    plr2Misses1.Visible = false;
+                    plr2Misses2.Visible = false;
+                    plr2Misses3.Visible = false;
+                }
+                else if (counter % 30 == 15)
+                {
+                    plr2Misses1.Visible = true;
+                    plr2Misses2.Visible = true;
+                    plr2Misses3.Visible = true;
+                }
+            }
+        }
+
+        private void MoleUp()
+
+        {
+
+            if (moleAnimationCounter == 1)
+
+            {
+
+                pictureBox1.Image = Properties.Resources.Diglett5;
+
+            }
+
+            if (moleAnimationCounter == 2)
+
+            {
+
+                pictureBox1.Image = Properties.Resources.Diglett4;
+
+            }
+
+            if (moleAnimationCounter == 3)
+
+            {
+
+                pictureBox1.Image = Properties.Resources.Diglett3;
+
+            }
+
+            if (moleAnimationCounter == 4)
+
+            {
+
+                pictureBox1.Image = Properties.Resources.Diglett2;
+
+            }
+
+            if (moleAnimationCounter == 5)
+
+            {
+
+                pictureBox1.Image = Properties.Resources.Diglett;
+
+            }
+
+        }
+
     }
 }

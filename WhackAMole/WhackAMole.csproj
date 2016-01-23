@@ -113,6 +113,36 @@
   <ItemGroup>
     <None Include="Resources\Score9.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CountDown1redone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CountDown2redone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CountDown3redone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MissMark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageedit_1_7563849262.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageedit_1_5960700020.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageedit_3_2491703640.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageedit_5_6213425643.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageedit_6_9201871860.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageedit_7_7848581481.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

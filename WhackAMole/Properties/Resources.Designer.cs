@@ -63,6 +63,86 @@ namespace WhackAMole.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CountDown1redone {
+            get {
+                object obj = ResourceManager.GetObject("CountDown1redone", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CountDown2redone {
+            get {
+                object obj = ResourceManager.GetObject("CountDown2redone", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CountDown3redone {
+            get {
+                object obj = ResourceManager.GetObject("CountDown3redone", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imageedit_1_5960700020 {
+            get {
+                object obj = ResourceManager.GetObject("imageedit_1_5960700020", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imageedit_3_2491703640 {
+            get {
+                object obj = ResourceManager.GetObject("imageedit_3_2491703640", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imageedit_6_9201871860 {
+            get {
+                object obj = ResourceManager.GetObject("imageedit_6_9201871860", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap loser {
+            get {
+                object obj = ResourceManager.GetObject("loser", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MissMark {
+            get {
+                object obj = ResourceManager.GetObject("MissMark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Score0 {
             get {
                 object obj = ResourceManager.GetObject("Score0", resourceCulture);
@@ -156,6 +236,16 @@ namespace WhackAMole.Properties {
         internal static System.Drawing.Bitmap Score9 {
             get {
                 object obj = ResourceManager.GetObject("Score9", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap winner {
+            get {
+                object obj = ResourceManager.GetObject("winner", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

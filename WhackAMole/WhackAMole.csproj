@@ -143,6 +143,57 @@
   <ItemGroup>
     <None Include="Resources\imageedit_7_7848581481.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BlueHit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Controls.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Diglett.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Diglett2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Diglett3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Diglett4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Diglett5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RedHit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sea_Pipe_Statue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ScoreBoardNew.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smb2_game_over.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smb3_game_over %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smw_course_clear.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smw_jump.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smw_kick.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smw_stomp.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smw_stomp_koopa_kid.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

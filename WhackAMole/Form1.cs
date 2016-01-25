@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using System.Media;
 
 namespace WhackAMole
 {
@@ -17,6 +18,11 @@ namespace WhackAMole
         //variables
         #region
         //Variables
+
+        SoundPlayer hit = new SoundPlayer(Properties.Resources.smw_kick);
+        SoundPlayer hit1 = new SoundPlayer(Properties.Resources.smw_stomp);
+        SoundPlayer miss = new SoundPlayer(Properties.Resources.smw_stomp_koopa_kid);
+
         int counter;
         int mole;
         int moleChance = 15;
@@ -116,10 +122,10 @@ namespace WhackAMole
             pictureBox5.BackgroundImage = Properties.Resources.CountDown1redone;
             GameCountdown();
             pictureBox5.Visible = false;
-            label1.Visible = true;
-            label2.Visible = true;
-            label3.Visible = true;
-            label4.Visible = true;
+            yellowMole.Visible = true;
+            blueMole.Visible = true;
+            greenMole.Visible = true;
+            redMole.Visible = true;
         }
 
         private void GameCountdown()
@@ -198,6 +204,17 @@ namespace WhackAMole
                         {
                             mole1 = false;
                             plr1Score++;
+                            redMole.BackgroundImage = Properties.Resources.RedHit;
+                            int rando = rndNum.Next(0,2);
+                            switch (rando)
+                            {
+                                case 0:
+                                    hit.Play();
+                                    break;
+                                case 1:
+                                    hit1.Play();
+                                    break;
+                            }
                         }
                         else
                         {
@@ -206,6 +223,7 @@ namespace WhackAMole
                                 plr1Miss--;
                             }
                             plr1Miss++;
+                            miss.Play();
                             //play the silly sound
                         }
                         break;
@@ -214,6 +232,17 @@ namespace WhackAMole
                         {
                             mole0 = false;
                             plr1Score++;
+                            yellowMole.BackgroundImage = Properties.Resources.RedHit;
+                            int rando = rndNum.Next(0, 2);
+                            switch (rando)
+                            {
+                                case 0:
+                                    hit.Play();
+                                    break;
+                                case 1:
+                                    hit1.Play();
+                                    break;
+                            }
                         }
                         else
                         {
@@ -222,6 +251,7 @@ namespace WhackAMole
                                 plr1Miss--;
                             }
                             plr1Miss++;
+                            miss.Play();
                         }
                         break;
                     case Keys.B:
@@ -229,6 +259,17 @@ namespace WhackAMole
                         {
                             mole3 = false;
                             plr1Score++;
+                            blueMole.BackgroundImage = Properties.Resources.RedHit;
+                            int rando = rndNum.Next(0, 2);
+                            switch (rando)
+                            {
+                                case 0:
+                                    hit.Play();
+                                    break;
+                                case 1:
+                                    hit1.Play();
+                                    break;
+                            }
                         }
                         else
                         {
@@ -237,6 +278,7 @@ namespace WhackAMole
                                 plr1Miss--;
                             }
                             plr1Miss++;
+                            miss.Play();
                         }
                         break;
                     case Keys.Space:
@@ -244,6 +286,17 @@ namespace WhackAMole
                         {
                             mole2 = false;
                             plr1Score++;
+                            greenMole.BackgroundImage = Properties.Resources.RedHit;
+                            int rando = rndNum.Next(0, 2);
+                            switch (rando)
+                            {
+                                case 0:
+                                    hit.Play();
+                                    break;
+                                case 1:
+                                    hit1.Play();
+                                    break;
+                            }
                         }
                         else
                         {
@@ -252,6 +305,7 @@ namespace WhackAMole
                                 plr1Miss--;
                             }
                             plr1Miss++;
+                            miss.Play();
                         }
                         break;
                     case Keys.V:
@@ -259,6 +313,17 @@ namespace WhackAMole
                         {
                             mole0 = false;
                             plr2Score++;
+                            yellowMole.BackgroundImage = Properties.Resources.BlueHit;
+                            int rando = rndNum.Next(0, 2);
+                            switch (rando)
+                            {
+                                case 0:
+                                    hit.Play();
+                                    break;
+                                case 1:
+                                    hit1.Play();
+                                    break;
+                            }
                         }
                         else
                         {
@@ -267,6 +332,7 @@ namespace WhackAMole
                                 plr2Miss--;
                             }
                             plr2Miss++;
+                            miss.Play();
                         }
                         break;
                     case Keys.C:
@@ -274,6 +340,17 @@ namespace WhackAMole
                         {
                             mole1 = false;
                             plr2Score++;
+                            redMole.BackgroundImage = Properties.Resources.BlueHit;
+                            int rando = rndNum.Next(0, 2);
+                            switch (rando)
+                            {
+                                case 0:
+                                    hit.Play();
+                                    break;
+                                case 1:
+                                    hit1.Play();
+                                    break;
+                            }
                         }
                         else
                         {
@@ -282,6 +359,7 @@ namespace WhackAMole
                                 plr2Miss--;
                             }
                             plr2Miss++;
+                            miss.Play();
                         }
                         break;
                     case Keys.X:
@@ -289,6 +367,17 @@ namespace WhackAMole
                         {
                             mole2 = false;
                             plr2Score++;
+                            greenMole.BackgroundImage = Properties.Resources.BlueHit;
+                            int rando = rndNum.Next(0, 2);
+                            switch (rando)
+                            {
+                                case 0:
+                                    hit.Play();
+                                    break;
+                                case 1:
+                                    hit1.Play();
+                                    break;
+                            }
                         }
                         else
                         {
@@ -297,6 +386,7 @@ namespace WhackAMole
                                 plr2Miss--;
                             }
                             plr2Miss++;
+                            miss.Play();
                         }
                         break;
                     case Keys.Z:
@@ -304,6 +394,17 @@ namespace WhackAMole
                         {
                             mole3 = false;
                             plr2Score++;
+                            blueMole.BackgroundImage = Properties.Resources.BlueHit;
+                            int rando = rndNum.Next(0, 2);
+                            switch (rando)
+                            {
+                                case 0:
+                                    hit.Play();
+                                    break;
+                                case 1:
+                                    hit1.Play();
+                                    break;
+                            }
                         }
                         else
                         {
@@ -312,6 +413,7 @@ namespace WhackAMole
                                 plr2Miss--;
                             }
                             plr2Miss++;
+                            miss.Play();
                         }
                         break;
                     default:
@@ -328,8 +430,7 @@ namespace WhackAMole
                     if (mole0 == false)
                     {
                         moleAnimationCounter = 0;
-                        //MoleUp();
-                        label1.BackColor = Color.Red;
+                        MoleUp(0);
                         mole0 = true;
                         //spawn mole in place 0
                     }
@@ -338,8 +439,7 @@ namespace WhackAMole
                     if (mole1 == false)
                     {
                         moleAnimationCounter1 = 0;
-                        //MoleUp();
-                        label2.BackColor = Color.Red;
+                        MoleUp(1);
                         mole1 = true;
                         //spawn mole in place 1
                     }
@@ -348,8 +448,7 @@ namespace WhackAMole
                     if (mole2 == false)
                     {
                         moleAnimationCounter2 = 0;
-                        //MoleUp();
-                        label3.BackColor = Color.Red;
+                        MoleUp(2);
                         mole2 = true;
                         //spawn mole in place 2
                     }
@@ -358,8 +457,7 @@ namespace WhackAMole
                     if (mole3 == false)
                     {
                         moleAnimationCounter3 = 0;
-                        //MoleUp();
-                        label4.BackColor = Color.Red;
+                        MoleUp(3);
                         mole3 = true;
                         //spawn mole in place 3
                     }
@@ -369,6 +467,22 @@ namespace WhackAMole
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            if (mole0 == true)
+            {
+                MoleUp(0);
+            }
+            if (mole1 == true)
+            {
+                MoleUp(1);
+            }
+            if (mole2 == true)
+            {
+                MoleUp(2);
+            }
+            if (mole3 == true)
+            {
+                MoleUp(3);
+            }
             moleAnimationCounter++;
             moleAnimationCounter1++;
             moleAnimationCounter2++;
@@ -432,19 +546,19 @@ namespace WhackAMole
             countdownTimer++;
             if (mole0 == false)
             {
-                label1.BackColor = Color.Black;
+                yellowMole.BackgroundImage = null;
             }
             if (mole1 == false)
             {
-                label2.BackColor = Color.Black;
+                redMole.BackgroundImage = null;
             }
             if (mole2 == false)
             {
-                label3.BackColor = Color.Black;
+                greenMole.BackgroundImage = null;
             }
             if (mole3 == false)
             {
-                label4.BackColor = Color.Black;
+                blueMole.BackgroundImage = null;
             }
             mole = rndNum.Next(0, moleChance);
             if (mole == 1)
@@ -611,6 +725,10 @@ namespace WhackAMole
             mole1 = false;
             mole2 = false;
             mole3 = false;
+            yellowMole.Visible = false;
+            redMole.Visible = false;
+            blueMole.Visible = false;
+            greenMole.Visible = false;
 
             if (endGameCounter == 1)
             {
@@ -668,7 +786,7 @@ namespace WhackAMole
         }
 
         private void StunPlayer(int player)
-        { 
+        {
             if (player == 1)
             {
                 if (counter % 30 == 0)
@@ -701,51 +819,100 @@ namespace WhackAMole
             }
         }
 
-        private void MoleUp()
-
+        private void MoleUp(int destination)
         {
-
-            if (moleAnimationCounter == 1)
-
+            if (destination == 0)
             {
-
-                pictureBox1.Image = Properties.Resources.Diglett5;
-
+                if (moleAnimationCounter == 1)
+                {
+                    yellowMole.BackgroundImage = Properties.Resources.Diglett5;
+                }
+                if (moleAnimationCounter == 2)
+                {
+                    yellowMole.BackgroundImage = Properties.Resources.Diglett4;
+                }
+                if (moleAnimationCounter == 3)
+                {
+                    yellowMole.BackgroundImage = Properties.Resources.Diglett3;
+                }
+                if (moleAnimationCounter == 4)
+                {
+                    yellowMole.BackgroundImage = Properties.Resources.Diglett2;
+                }
+                if (moleAnimationCounter >= 5)
+                {
+                    yellowMole.BackgroundImage = Properties.Resources.Diglett;
+                }
             }
-
-            if (moleAnimationCounter == 2)
-
+            if (destination == 1)
             {
-
-                pictureBox1.Image = Properties.Resources.Diglett4;
-
+                if (moleAnimationCounter1 == 1)
+                {
+                    redMole.BackgroundImage = Properties.Resources.Diglett5;
+                }
+                if (moleAnimationCounter1 == 2)
+                {
+                    redMole.BackgroundImage = Properties.Resources.Diglett4;
+                }
+                if (moleAnimationCounter1 == 3)
+                {
+                    redMole.BackgroundImage = Properties.Resources.Diglett3;
+                }
+                if (moleAnimationCounter1 == 4)
+                {
+                    redMole.BackgroundImage = Properties.Resources.Diglett2;
+                }
+                if (moleAnimationCounter1 >= 5)
+                {
+                    redMole.BackgroundImage = Properties.Resources.Diglett;
+                }
             }
-
-            if (moleAnimationCounter == 3)
-
+            if (destination == 2)
             {
-
-                pictureBox1.Image = Properties.Resources.Diglett3;
-
+                if (moleAnimationCounter2 == 1)
+                {
+                    greenMole.BackgroundImage = Properties.Resources.Diglett5;
+                }
+                if (moleAnimationCounter2 == 2)
+                {
+                    greenMole.BackgroundImage = Properties.Resources.Diglett4;
+                }
+                if (moleAnimationCounter2 == 3)
+                {
+                    greenMole.BackgroundImage = Properties.Resources.Diglett3;
+                }
+                if (moleAnimationCounter2 == 4)
+                {
+                    greenMole.BackgroundImage = Properties.Resources.Diglett2;
+                }
+                if (moleAnimationCounter2 >= 5)
+                {
+                    greenMole.BackgroundImage = Properties.Resources.Diglett;
+                }
             }
-
-            if (moleAnimationCounter == 4)
-
+            if (destination == 3)
             {
-
-                pictureBox1.Image = Properties.Resources.Diglett2;
-
+                if (moleAnimationCounter3 == 1)
+                {
+                    blueMole.BackgroundImage = Properties.Resources.Diglett5;
+                }
+                if (moleAnimationCounter3 == 2)
+                {
+                    blueMole.BackgroundImage = Properties.Resources.Diglett4;
+                }
+                if (moleAnimationCounter3 == 3)
+                {
+                    blueMole.BackgroundImage = Properties.Resources.Diglett3;
+                }
+                if (moleAnimationCounter3 == 4)
+                {
+                    blueMole.BackgroundImage = Properties.Resources.Diglett2;
+                }
+                if (moleAnimationCounter3 >= 5)
+                {
+                    blueMole.BackgroundImage = Properties.Resources.Diglett;
+                }
             }
-
-            if (moleAnimationCounter == 5)
-
-            {
-
-                pictureBox1.Image = Properties.Resources.Diglett;
-
-            }
-
         }
-
+        }
     }
-}

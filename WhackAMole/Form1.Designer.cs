@@ -30,10 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.gameTimer = new System.Windows.Forms.Timer(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -51,6 +47,10 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.endGameTimer = new System.Windows.Forms.Timer(this.components);
+            this.yellowMole = new System.Windows.Forms.PictureBox();
+            this.redMole = new System.Windows.Forms.PictureBox();
+            this.greenMole = new System.Windows.Forms.PictureBox();
+            this.blueMole = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -66,47 +66,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.continueBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yellowMole)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.redMole)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.greenMole)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.blueMole)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(463, 336);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 66);
-            this.label1.TabIndex = 0;
-            this.label1.Visible = false;
-            // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(552, 402);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 66);
-            this.label2.TabIndex = 1;
-            this.label2.Visible = false;
-            // 
-            // label3
-            // 
-            this.label3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(463, 468);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 66);
-            this.label3.TabIndex = 2;
-            this.label3.Visible = false;
-            // 
-            // label4
-            // 
-            this.label4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(374, 402);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 66);
-            this.label4.TabIndex = 3;
-            this.label4.Visible = false;
             // 
             // gameTimer
             // 
@@ -292,12 +256,64 @@
             this.endGameTimer.Interval = 1000;
             this.endGameTimer.Tick += new System.EventHandler(this.endGameTimer_Tick);
             // 
+            // yellowMole
+            // 
+            this.yellowMole.BackColor = System.Drawing.Color.Transparent;
+            this.yellowMole.BackgroundImage = global::WhackAMole.Properties.Resources.Diglett;
+            this.yellowMole.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.yellowMole.Location = new System.Drawing.Point(404, 48);
+            this.yellowMole.Name = "yellowMole";
+            this.yellowMole.Size = new System.Drawing.Size(214, 161);
+            this.yellowMole.TabIndex = 24;
+            this.yellowMole.TabStop = false;
+            this.yellowMole.Visible = false;
+            // 
+            // redMole
+            // 
+            this.redMole.BackColor = System.Drawing.Color.Transparent;
+            this.redMole.BackgroundImage = global::WhackAMole.Properties.Resources.Diglett;
+            this.redMole.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.redMole.Location = new System.Drawing.Point(610, 119);
+            this.redMole.Name = "redMole";
+            this.redMole.Size = new System.Drawing.Size(214, 161);
+            this.redMole.TabIndex = 25;
+            this.redMole.TabStop = false;
+            this.redMole.Visible = false;
+            // 
+            // greenMole
+            // 
+            this.greenMole.BackColor = System.Drawing.Color.Transparent;
+            this.greenMole.BackgroundImage = global::WhackAMole.Properties.Resources.Diglett;
+            this.greenMole.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.greenMole.Location = new System.Drawing.Point(390, 220);
+            this.greenMole.Name = "greenMole";
+            this.greenMole.Size = new System.Drawing.Size(214, 161);
+            this.greenMole.TabIndex = 26;
+            this.greenMole.TabStop = false;
+            this.greenMole.Visible = false;
+            // 
+            // blueMole
+            // 
+            this.blueMole.BackColor = System.Drawing.Color.Transparent;
+            this.blueMole.BackgroundImage = global::WhackAMole.Properties.Resources.Diglett;
+            this.blueMole.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.blueMole.Location = new System.Drawing.Point(184, 129);
+            this.blueMole.Name = "blueMole";
+            this.blueMole.Size = new System.Drawing.Size(214, 161);
+            this.blueMole.TabIndex = 27;
+            this.blueMole.TabStop = false;
+            this.blueMole.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1000, 700);
+            this.Controls.Add(this.blueMole);
+            this.Controls.Add(this.greenMole);
+            this.Controls.Add(this.redMole);
+            this.Controls.Add(this.yellowMole);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.continueBox);
@@ -313,10 +329,6 @@
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
@@ -339,17 +351,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.continueBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yellowMole)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.redMole)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.greenMole)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.blueMole)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer gameTimer;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -367,6 +378,10 @@
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.Timer endGameTimer;
+        private System.Windows.Forms.PictureBox yellowMole;
+        private System.Windows.Forms.PictureBox redMole;
+        private System.Windows.Forms.PictureBox greenMole;
+        private System.Windows.Forms.PictureBox blueMole;
     }
 }
 

@@ -18,11 +18,13 @@ namespace WhackAMole
         //variables
         #region
         //Variables
-
+        //sounds
         SoundPlayer hit = new SoundPlayer(Properties.Resources.smw_kick);
         SoundPlayer hit1 = new SoundPlayer(Properties.Resources.smw_stomp);
         SoundPlayer miss = new SoundPlayer(Properties.Resources.smw_stomp_koopa_kid);
-
+        SoundPlayer intro = new SoundPlayer(Properties.Resources.smw_course_clear);
+        SoundPlayer end = new SoundPlayer(Properties.Resources.smb3_game_over__1_);
+        //ints
         int counter;
         int mole;
         int moleChance = 15;
@@ -39,14 +41,14 @@ namespace WhackAMole
         int moleAnimationCounter1;
         int moleAnimationCounter2;
         int moleAnimationCounter3;
-
+        //bools
         bool mole0 = false;
         bool mole1 = false;
         bool mole2 = false;
         bool mole3 = false;
         bool plr1Enabled = true;
         bool plr2Enabled = true;
-
+        //sizes with their corresponing locations for the game start animation
         Size size1 = new Size(900, 1500);
         Point location1 = new Point(57, -510);
         Size size2 = new Size(810, 1350);
@@ -82,6 +84,13 @@ namespace WhackAMole
 
         public Form1()
         {
+            Form blackBack = new Form();
+            blackBack.FormBorderStyle = FormBorderStyle.None;
+            blackBack.BackColor = Color.Black;
+            blackBack.WindowState = FormWindowState.Maximized;
+            blackBack.Show();
+
+            intro.Play();
             InitializeComponent();
             gameTimer.Start();
             //making point list
@@ -176,6 +185,7 @@ namespace WhackAMole
         {
             if (endGameTimer.Enabled == true && endGameCounter >= 4)
             {
+                intro.Play();
                 endGameTimer.Enabled = false;
                 pictureBox6.Visible = false;
                 pictureBox7.Visible = false;
@@ -199,6 +209,9 @@ namespace WhackAMole
                 //check to see if a key is pressed and set is KeyDown value to true if it has 
                 switch (e.KeyCode)
                 {
+                    case Keys.Escape:
+                        this.Close();
+                        break;
                     case Keys.M:
                         if (mole1 == true && plr1Enabled == true)
                         {
@@ -721,6 +734,7 @@ namespace WhackAMole
 
         private void EndGame()
         {
+            end.Play();
             mole0 = false;
             mole1 = false;
             mole2 = false;
@@ -729,6 +743,8 @@ namespace WhackAMole
             redMole.Visible = false;
             blueMole.Visible = false;
             greenMole.Visible = false;
+            plr1Score = 0;
+            plr2Score = 0;
 
             if (endGameCounter == 1)
             {

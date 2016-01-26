@@ -186,6 +186,10 @@ namespace WhackAMole
             if (endGameTimer.Enabled == true && endGameCounter >= 4)
             {
                 intro.Play();
+                pictureBox1.BackgroundImage = Properties.Resources.Score0;
+                pictureBox2.BackgroundImage = Properties.Resources.Score0;
+                pictureBox3.BackgroundImage = Properties.Resources.Score0;
+                pictureBox4.BackgroundImage = Properties.Resources.Score0;
                 endGameTimer.Enabled = false;
                 pictureBox6.Visible = false;
                 pictureBox7.Visible = false;
@@ -743,9 +747,6 @@ namespace WhackAMole
             redMole.Visible = false;
             blueMole.Visible = false;
             greenMole.Visible = false;
-            plr1Score = 0;
-            plr2Score = 0;
-
             if (endGameCounter == 1)
             {
                 gameTimer.Stop();
